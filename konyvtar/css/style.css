@@ -68,7 +68,7 @@ table tr:nth-child(2n+1):not(#reszletes table tr:nth-child(2n+1)) {
 }
 
 header {
-    background-color: #b22222;
+    background-color: #a03939;
     color: #fff;
     padding: 5px;
     border: 1px solid #ffa500;

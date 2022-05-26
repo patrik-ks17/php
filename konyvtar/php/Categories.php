@@ -16,7 +16,7 @@ class Categories extends Application {
         // }
         // debug($this->getResultList("select * from books"));
     }
-
+    
     public function getCategories() {
         $categories = $this->getResultList($this->sql['allCategories']);
         return $categories;
