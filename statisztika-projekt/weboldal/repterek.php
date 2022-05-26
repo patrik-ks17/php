@@ -2,6 +2,9 @@
 	include_once('php/Carriers.php');
 
 	$carriers = new Carriers();
+
+
+
 ?>
 
 <!DOCTYPE HTML>
@@ -27,11 +30,8 @@
             <a href="">Repterek</a>
         </p>
         <h2>3 Legforgalmasabb Reptér</h2>
-    <? foreach ($carriers->getCarriers() as $key => $carriers) {?>
-        <? 
-            
-        ?>
-    <div class="row">
+    
+        <div class="row">
         <div id="repter" class="col-3">
             <div id="cup">
                 <img src="../img/kupa/gold-cup.png" alt="arany kupa">
@@ -44,7 +44,7 @@
             <p>Koordináták:</p>
             <span>44.1193661197°N, -123.212118228°E</span>
         </div>
-        <? } ?>
+       
 
         <div id="repter" class="col-3">
             <div id="cup">
