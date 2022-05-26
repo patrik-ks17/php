@@ -36,7 +36,7 @@
 			</header>
 			<div id="kategoriak">
 					<? foreach ($categories->getCategories() as $key => $category) { ?>
-						<input type="checkbox" name="<?=$category['name']?>" id="<?=$category['name']?>" data-szoveg="<?=$category['name']?>">
+						<input type="checkbox" name="<?= $category['name']?>" id="<?=$category['name']?>" data-szoveg="<?=$category['name']?>">
 						<label for="<?=$category['name']?>" id="<?=$category['name'].'_lbl'?>" onclick="location.href='kategoria.php?cat=<?=$category['id']?>'"> 
 							<?=$category['name']?>
 						</label>
