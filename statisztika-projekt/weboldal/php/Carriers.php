@@ -15,9 +15,8 @@ class Carriers extends App {
 		return $carriers;
 	}
 
-	public function getAllFlights() 
-	{
-
+	public function getAllFlights() {
+		
 	}
 }
 
