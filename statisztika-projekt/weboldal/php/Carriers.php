@@ -3,7 +3,7 @@ include_once('App.php');
 
 class Carriers extends App {
 	private $sql = array(
-		'allCarriers' => 'SELECT c.name AS legitarsasag FROM carriers c',
+		'allCarriers' => 'SELECT c.name AS legitarsasag, c.id AS azon FROM carriers c',
 		'TopFlights' => 'SELECT airports.code AS leg_kod, airports.name AS legitarsasag, SUM(flights.arr_flights) AS osszesjarat 					 FROM flights
 							INNER JOIN airports_carrier ON flights.airport_carriers_id = airports_carrier.id
 							INNER JOIN airports ON airports_carrier.airport_id = airports.id
@@ -17,6 +17,7 @@ class Carriers extends App {
 							GROUP BY carriers.code, carriers.name
 							ORDER BY atlagkeses
 							LIMIT 3'
+
 	);	
 
 	public function __construct() {
@@ -37,6 +38,7 @@ class Carriers extends App {
 		$delays = $this->getResultList($this->sql['LeastDelay']);
 		return $delays;
 	}
+
 }
 
 
