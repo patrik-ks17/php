@@ -16,8 +16,8 @@ class Carriers extends App {
 							INNER JOIN carriers ON airports_carrier.carrier_id = carriers.id
 							GROUP BY carriers.code, carriers.name
 							ORDER BY atlagkeses
-							LIMIT 3'
-
+							LIMIT 3',
+		'carrier' => "SELECT name, code, id FROM carriers WHERE id = {id}"
 	);	
 
 	public function __construct() {
@@ -39,6 +39,15 @@ class Carriers extends App {
 		return $delays;
 	}
 
+
+	public function getCarrierById($carrierId){
+		if(!$this->isValid($carrierId)) {
+			 return '';
+		}
+		$params = array("{id}" => $carrierId);
+		$carrier = $this->getResultList(strtr($this->sql['carrier'], $params));
+		return $carrier[0];
+  }
 }
 
 

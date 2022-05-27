@@ -36,6 +36,13 @@ class App {
 		return $resultList;
 	}
 
+	protected function isValid($id){
+		if (is_int($id) && $id > 0) {
+			 return true;
+		} else {
+			 return false;
+		}
+  }
 }
 
 ?>

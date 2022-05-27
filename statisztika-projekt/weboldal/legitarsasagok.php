@@ -37,7 +37,7 @@
             }
             ?>
             <li>
-                 <a href="../legitarsasagok/<?= $tars_nev ?>/<?= $tars_nev ?>.php?id=<?= $legitars['azon'] ?>"><?= $legitars['legitarsasag'] ?></a> 
+                 <a href="../legitarsasagok/tarsasagok.php?id=<?= $legitars['azon'] ?>"><?= $legitars['legitarsasag'] ?></a> 
             </li>    
         <? } ?>
             

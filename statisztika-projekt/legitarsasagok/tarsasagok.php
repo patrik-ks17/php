@@ -1,10 +1,9 @@
 <?  
 	include_once('../weboldal/php/Carriers.php');
-	include_once('../weboldal/php/CarriersData.php');
 	$carriers = new Carriers();
 	$legitars = $carriers->getCarriers();
+    $rekord = $carriers->getCarrierById(intval($_GET['id']));
 	
-	 
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -25,15 +24,15 @@
         <p>
             <a href="../../weboldal/fooldal.html">Főoldal</a> 
             > 
-            <a href="../../weboldal/legitarsasagok.php">Légitársaságok listája</a>
+            <a href="../weboldal/legitarsasagok.php">Légitársaságok listája</a>
             >
-            <a href="../endeavor/tarsasagok.php">Endeavor Air Inc.</a>
+            <a href="../endeavor/tarsasagok.php"><?= $rekord['name'] ?></a>
         </p>
 
-        <h3>Endeavor Air Inc.</h3>
+        <h3><?= $rekord['name'] ?></h3>
         <div class="row">
             <div id="logo">
-                <img src="repterkepek/<?= $legitars['legitarsasag']?>" alt="logó">
+                <img src="repterkepek/<?= $rekord['id'] ?>.jpg" alt="logó">
             </div>
             <div id="adat" class="col-4">
                 <p>Az összes járat:</p>
