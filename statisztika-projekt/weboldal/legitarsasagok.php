@@ -26,18 +26,18 @@
             <a href="">Légitársaságok listája</a>
         </p>
         <ul>
-        <? foreach ($carriers->getCarriers() as $key => $carriers) {?>
+        <? foreach ($carriers->getCarriers() as $key => $legitars) {?>
             <? 
-            if (!strpos($carriers['legitarsasag'], 'LLC')) {
-                $tarsasag = explode(' ',$carriers['legitarsasag']);
+            if (!strpos($legitars['legitarsasag'], 'LLC')) {
+                $tarsasag = explode(' ',$legitars['legitarsasag']);
                 $tars_nev = strtolower($tarsasag[0]);
             } else {
-                $tarsasag = explode(' ',$carriers['legitarsasag']);
+                $tarsasag = explode(' ',$legitars['legitarsasag']);
                 $tars_nev = strtolower($tarsasag[0] . '_llc');
             }
             ?>
             <li>
-                <a href="../legitarsasagok/<?= $tars_nev ?>/<?= $tars_nev ?>.html"><?=$carriers['legitarsasag']?></a>
+                <a href="../legitarsasagok/<?= $tars_nev ?>/<?= $tars_nev ?>.html"><?=$legitars['legitarsasag']?></a>
             </li>    
         <? } ?>
             

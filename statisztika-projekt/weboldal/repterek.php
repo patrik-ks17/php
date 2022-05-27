@@ -2,9 +2,9 @@
 	include_once('php/Carriers.php');
 
 	$carriers = new Carriers();
-
-
-
+    $top_flights = $carriers->getTopFlights();
+    foreach ($carriers->getTopFlights() as $key => $flights)
+        $top_fl_name[] = explode(':',$flights['legitarsasag'])[1]; 
 ?>
 
 <!DOCTYPE HTML>
@@ -35,12 +35,12 @@
         <div id="repter" class="col-3">
             <div id="cup">
                 <img src="../img/kupa/gold-cup.png" alt="arany kupa">
-                <h5 class="n-m">- <?   ?></h5>
+                <h5 class="n-m">- <?= $top_fl_name[0] ?></h5>
             </div>
             <p>Az összes járat:</p>
-            <span>3230</span>
+            <span><?= $top_flights[0]['osszesjarat'] ?></span>
             <p>Kód:</p>
-            <span>OO</span>
+            <span><?= $top_flights[0]['leg_kod'] ?></span>
             <p>Koordináták:</p>
             <span>44.1193661197°N, -123.212118228°E</span>
         </div>
@@ -49,12 +49,12 @@
         <div id="repter" class="col-3">
             <div id="cup">
                 <img src="../img/kupa/silver-cup.png" alt="ezüst kupa">
-                <h5 class="n-m">- Delta Air Lines Inc.</h5>
+                <h5 class="n-m">- <?= $top_fl_name[1] ?></h5>
             </div>
             <p>Az összes járat:</p>
-            <span>1878</span>
+            <span><?= $top_flights[1]['osszesjarat'] ?></span>
             <p>Kód:</p>
-            <span>DL</span>
+            <span><?= $top_flights[1]['leg_kod'] ?></span>
             <p>Koordináták:</p>
             <span>18.4367716667°N, -66.0014277783°E</span>
         </div>
@@ -62,12 +62,12 @@
         <div id="repter" class="col-3">
             <div id="cup">
                 <img src="../img/kupa/bronz-cup.png" alt="bronz kupa">
-                <h5 class="n-m">- Envoy Air Inc.</h5>
+                <h5 class="n-m">- <?= $top_fl_name[2] ?></h5>
             </div>
             <p>Az összes járat:</p>
-            <span>1876</span>
+            <span><?= $top_flights[2]['osszesjarat'] ?></span>
             <p>Kód:</p>
-            <span>MQ</span>
+            <span><?= $top_flights[2]['leg_kod'] ?></span>
             <p>Koordináták:</p>
             <span>32.9277196562°N, -97.0034683301°E</span>
         </div>

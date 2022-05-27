@@ -1,3 +1,11 @@
+<?
+    include_once('php/Carriers.php');
+
+    $carriers = new Carriers();
+    $leastDelay = $carriers->getLeastDelay();
+    
+?>
+
 <!DOCTYPE HTML>
 <html lang="hu">
 <head>
@@ -25,28 +33,28 @@
         <div id="repter" class="col-3">
             <div id="cup">
                 <img src="../img/kupa/gold-cup.png" alt="arany kupa">
-                <h5 class="n-m">- Hawaiian Airlines Inc.</h5>
+                <h5 class="n-m">- <?= $leastDelay[0]['legitarsasag'] ?></h5>
             </div>
             <p>Átlagos késés:</p>
-            <span>64</span>
+            <span><?= $leastDelay[0]['atlagkeses'] ?> perc</span>
         </div>
 
         <div id="repter" class="col-3">
             <div id="cup">
                 <img src="../img/kupa/silver-cup.png" alt="ezüst kupa">
-                <h5 class="n-m">- ExpressJet Airlines Inc.</h5>
+                <h5 class="n-m">- <?= $leastDelay[1]['legitarsasag'] ?></h5>
             </div>
             <p>Átlagos késés:</p>
-            <span>83</span>
+            <span><?= $leastDelay[1]['atlagkeses'] ?> perc</span>
         </div>
 
         <div id="repter" class="col-3">
             <div id="cup">
                 <img src="../img/kupa/bronz-cup.png" alt="bronz kupa">
-                <h5 class="n-m">- Frontier Airlines Inc.</h5>
+                <h5 class="n-m">- <?= $leastDelay[2]['legitarsasag'] ?></h5>
             </div>
             <p>Átlagos késés:</p>
-            <span>210</span>
+            <span><?= $leastDelay[2]['atlagkeses'] ?> perc</span>
         </div>
     </div>
     </main>
