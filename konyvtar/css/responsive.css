@@ -31,6 +31,10 @@ body {
     margin-bottom: 20px;
 }
 
+.m-b-n {
+    margin-bottom: 0px;
+}
+
 @media only screen and (max-width: 768px) {
     [class*="col-"] {
         width: 100%;

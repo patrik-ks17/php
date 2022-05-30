@@ -6,6 +6,8 @@
 	// new Application();
 	$books = new Books();
 	$categories = new Categories();
+
+	// $books->writelog("Az első log."); 
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +45,7 @@
 						<br>
 					<? } ?>
 					<hr>
-					<a href="admin/login.html"><span><img src="img/login.png" alt="belépés" title="belépés"></span>Belépés</a>
+					<a href="admin/login.php"><span><img src="img/login.png" alt="belépés" title="belépés"></span>Belépés</a>
 			</div>
 		</div>
 
@@ -64,7 +66,7 @@
 						</tr>
 						<? foreach ($books->getBooks() as $key => $book){ ?>
 									<tr>
-										<td> <?= $book['title'] ?> </td>
+										<td> <a href="detail.php?book=<?= $book['id'] ?>"> <?= $book['title'] ?> </a></td>
 										<td> <?= $book['author'] ?> </td>
 										<td> <?= $book['category'] ?> </td>
 									</tr>

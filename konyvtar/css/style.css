@@ -60,11 +60,12 @@ table tr:nth-child(2n+1):not(#reszletes table tr:nth-child(2n+1)) {
 }
 
 #reszletes table tr, #reszletes table th, #reszletes table td{
-    padding: 10px;
+    padding: 5px;
 }
 
 #reszletes table th {
     text-align: left;
+    padding-right: 13px;
 }
 
 header {

@@ -16,6 +16,7 @@ class Application {
 		$this->connectDb();
 	}
 
+
 	private function connectDb(){
 		$this->connection = new mysqli($this->dbParams['servername'], $this->dbParams['username'],$this->dbParams['password'],$this->dbParams['dbname']);
 		if ($this->connection->connect_error){
@@ -27,6 +28,7 @@ class Application {
 	protected function isDbConnectionLive() {
 		return $this->connectionLive;
 	}
+
 
 	protected function getResultList($sql) {
 		$resultList = array();
@@ -42,9 +44,32 @@ class Application {
 		return $resultList;
 	}
 
-	protected function writeLog($string, $sql){
 
+	protected function getSingleResult($sql) {
+		$resultList = $this->getResultList($sql);
+		
+		if (!$resultList) {
+			$this->writeLog("nem talált értéket a lekérdezés", $sql);
+			return array();
+		}
+		else {
+			return $resultList[0];
+		}
 	}
+
+
+	protected function writeLog($string, $sql = null){
+		$logstr = $string;
+
+		if ($sql !== null) {
+			$logstr .= " -- SQL QUERY: " . $sql;
+		}
+		$logstr .= "\n";
+		$log = fopen("log/log.txt", "a");
+		fwrite($log, $logstr);
+		fclose($log);
+	}
+
 
 	protected function isValidId($id) {
 		if (is_int($id) && $id > 0) {
@@ -56,6 +81,9 @@ class Application {
 	}
 
 
+	protected function deleteRecordById($table, $id) {
+		$result = $this->connection->query("DELETE FROM $table WHERE id = $id");
+		return $result;
+	}
 }
-
 ?>
