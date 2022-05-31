@@ -3,7 +3,7 @@ include_once('Application.php');
 
 class Varos extends Application {
 	private $sql = array(
-		'Varosok_Id' => 'SELECT varos.id, varos.vnev AS varosnevek FROM varos
+		'Varosok_Id' => 'SELECT varos.id, varos.vnev AS varosnev FROM varos
 								WHERE varos.megyeid = {id};',
 		'Varos_Infok' => 'SELECT varostipus.vtip AS tipus, 
 										varos.vnev AS varosnev,
@@ -28,8 +28,8 @@ class Varos extends Application {
 		$params = array(
 			'{id}' => $id
 		);
-		$varos = $this->getResultList( strtr($this->sql['Varosok_Id'], $params));
-		return $varos;
+		$varosok = $this->getResultList( strtr($this->sql['Varosok_Id'], $params));
+		return $varosok;
 	}
 
 

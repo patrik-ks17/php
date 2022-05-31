@@ -3,7 +3,7 @@ include_once('Application.php');
 
 class Megyek extends Application {
 	private $sql = array(
-		'Ossz_Megye' => 'SELECT megye.id, megye.mnev AS megyenevek FROM megye;'
+		'Ossz_Megye' => 'SELECT megye.id, megye.mnev AS megyenev FROM megye;'
 	);
 
 	public function __construct() {
@@ -11,11 +11,11 @@ class Megyek extends Application {
 	}
 	
 
-	public function Minden_megye() 
-	{
+	public function Minden_megye() {
 		$osszes_megye = $this->getResultList($this->sql['Ossz_Megye']);
 		return $osszes_megye;
 	}
+
 }
 
 

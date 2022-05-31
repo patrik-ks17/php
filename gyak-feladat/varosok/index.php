@@ -27,7 +27,7 @@
 					<ul>
 						<? foreach($megyek->Minden_megye() as $key => $megye) { ?>
 						<tr>
-							<li><a href="?megyeid=<?= $megye['id'] ?>"><?= $megye['megyenevek'] ?></a></li>
+							<li><a href="?megyeid=<?= $megye['id'] ?>"><?= $megye['megyenev'] ?></a></li>
 						</tr>
 						<? } ?>
 					</ul>
@@ -37,7 +37,7 @@
 					<ul>
 						<? if (isset($_GET['megyeid'])) foreach($varosok->Varosok_Id(intval($_GET['megyeid'])) as $key => $varos) { ?>
 						<tr>
-							<li><a href="?megyeid=<?= intval($_GET['megyeid']) ?>&varosid=<?= $varos['id'] ?>"><?= $varos['varosnevek'] ?></a></li>
+							<li><a href="?megyeid=<?= intval($_GET['megyeid']) ?>&varosid=<?= $varos['id'] ?>"><?= $varos['varosnev'] ?></a></li>
 						</tr>
 						<? } ?>
 					</ul>
@@ -48,8 +48,8 @@
 					<ul>
 						<tr>
 							<p>Típusa: <?= $varos_info['tipus'] ?></p>
-							<p>Területe: <?= $varos_info['terulet'] ?></p>
-							<p>Népessége: <?= $varos_info['nepesseg'] ?></p>
+							<p>Területe: <?= $varos_info['terulet'] ?> km &sup2;</p>
+							<p>Népessége: <?= $varos_info['nepesseg'] ?> fő</p>
 							<p>Kistérség: <?= $varos_info['kisterseg'] ?></p>
 							<p>Járás: <?= $varos_info['jaras']; } ?></p>
 						</tr>
