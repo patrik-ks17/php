@@ -1,0 +1,89 @@
+* {
+	margin: auto;
+}
+
+body {
+	background-image: url('HU_3.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+   height: 100%;
+}
+
+main {
+	background-color: rgba(0, 0, 0, 0.3);
+	content: '';
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+
+h1 {
+	padding: 10px 0 25px 0;
+	text-align: center;
+	color: rgb(241, 241, 241);
+	text-shadow: 2px 2px black;
+	text-decoration: underline;
+}
+
+
+div.row {
+	width: 80%;
+	display: flex;
+}
+
+div.megyek, div.varosok, div.varos_info {
+	border-radius: 25px;
+	background-color: rgba(0, 0, 0, 0.85);
+	padding: 10px 20px 20px 10px;
+}
+
+.megyek {
+	width: 280px;
+	margin-top: 10px;
+	margin-right: 0px;
+}
+
+.varosok {
+	width: 280px;
+	margin-top: 10px;
+}
+
+.varos_info {
+	width: 280px;
+	margin-top: 10px;
+	margin-left: 0px;
+}
+
+
+span {
+	display: table;
+	margin: auto;
+	padding-bottom: 22px;
+	font-size: 24px;
+	color: rgb(241, 241, 241);
+	text-shadow: 2px 2px black;
+	text-decoration: underline;
+}
+
+
+li, p {
+	margin-bottom: 8px;
+}
+
+
+a {
+	text-decoration: underline dashed rgb(5, 195, 253);
+}
+
+a:visited, a:link, li, p {
+	color: rgb(241, 241, 241);
+	text-shadow: 2px 2px black;
+	font-size: 18px;
+}
+
+
+footer {
+	height: 100px;
+}
