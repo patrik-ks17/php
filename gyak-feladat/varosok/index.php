@@ -4,6 +4,7 @@
 
 	$megyek = new Megyek();
 	$varosok = new Varos();
+	$megyenev = 'Város';
 	if (isset($_GET['varosid']))
 		$varos_info = $varosok->Varos_Infok(intval($_GET['varosid']));
 ?>
@@ -29,11 +30,11 @@
 						<tr>
 							<li><a href="?megyeid=<?= $megye['id'] ?>"><?= $megye['megyenev'] ?></a></li>
 						</tr>
-						<? } ?>
+						<? if (isset($_GET['megyeid']) && $megye['id'] == intval($_GET['megyeid']))  $megyenev = $megye['megyenev'];  } ?>
 					</ul>
 				</div>
 				<div class="varosok">
-					<span>Városok</span>
+					<span><?= $megyenev ?></span>
 					<ul>
 						<? if (isset($_GET['megyeid'])) foreach($varosok->Varosok_Id(intval($_GET['megyeid'])) as $key => $varos) { ?>
 						<tr>
