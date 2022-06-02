@@ -1,7 +1,11 @@
 <?
     include_once('../php/Books.php');
-    $books = new Books();
+    include_once('../php/Authors.php');
+    include_once('../php/Categories.php');
 
+    $books = new Books();
+    $authors = new Authors();
+    $categories = new Categories();
 ?>
 
 <!DOCTYPE html>
@@ -34,20 +38,15 @@
                         <th>Név</th>
                         <th>Funkciók</th>
                     </tr>
+                    <? foreach ($authors->getAuthors() as $key => $author) { ?>
                     <tr>
-                        <td>J.R.R. Tolkien</td>
+                        <td><?= $author['name'] ?></td>
                         <td class="functions">
-                            <a href="#"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
-                            <a href="#"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
+                            <a href="szerzo_form.php"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
+                            <a href="#" class="delete_record" table="authors" record_id="<?= $author['id'] ?>"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Rhonda Brain</td>
-                        <td class="functions">
-                            <a href="#"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
-                            <a href="#"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
-                        </td>
-                    </tr>
+                <? } ?>
                 </table>
             </div>
             <div class="col-6">
@@ -58,27 +57,15 @@
                         <th>Név</th>
                         <th>Funkciók</th>
                     </tr>
+                    <? foreach ($categories->getCategories() as $key => $category) { ?>
                     <tr>
-                        <td>Fantasy</td>
+                        <td><?= $category['name'] ?></td>
                         <td class="functions">
-                            <a href="#"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
-                            <a href="#"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
+                            <a href="kategoria_form.php"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
+                            <a href="#" class="delete_record" table="categories" record_id="<?= $category['id'] ?>"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Motivációs</td>
-                        <td class="functions">
-                            <a href="#"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
-                            <a href="#"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Regény</td>
-                        <td class="functions">
-                            <a href="#"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
-                            <a href="#"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
-                        </td>
-                    </tr>
+                <? } ?>
                 </table>
             </div>
         </div>
