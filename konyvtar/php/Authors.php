@@ -15,6 +15,14 @@ class Authors extends Application {
         $authors = $this->getResultList($this->sql['allAuthors']);
         return $authors;
     }
+
+	 public function delete($id) {
+		if(!$this->isValidId($id)) {
+			return false;
+		}
+		$res = $this->deleteRecordById("authors", $id);
+		return $res;
+	}
 }
 
 

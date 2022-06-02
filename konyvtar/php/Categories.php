@@ -21,6 +21,14 @@ class Categories extends Application {
         $categories = $this->getResultList($this->sql['allCategories']);
         return $categories;
     }
+
+    public function delete($id) {
+		if(!$this->isValidId($id)) {
+			return false;
+		}
+		$res = $this->deleteRecordById("categories", $id);
+		return $res;
+	}
 }
 
 
