@@ -82,7 +82,7 @@ class Application {
 
 
 	protected function deleteRecordById($table, $id) {
-		$result = $this->connection->query("DELETE FROM $table WHERE id = $id");
+		$result = $this->connection->query("DELETE FROM $table WHERE $table.id = $id;");
 		return $result;
 	}
 }

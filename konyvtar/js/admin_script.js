@@ -7,7 +7,7 @@ $(document).ready(function()  {
 			let table = $(this).attr("table");
 			let id = $(this).attr("record_id");
 
-			location.href = "../php/delete.php?t="+table+"$id="+id;
+			location.href = "../php/delete.php?t="+table+"&id="+id;
 		}
 
 	});

@@ -38,15 +38,16 @@
                         <th>Név</th>
                         <th>Funkciók</th>
                     </tr>
+
                     <? foreach ($authors->getAuthors() as $key => $author) { ?>
-                    <tr>
-                        <td><?= $author['name'] ?></td>
-                        <td class="functions">
-                            <a href="szerzo_form.php"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
-                            <a href="#" class="delete_record" table="authors" record_id="<?= $author['id'] ?>"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
-                        </td>
-                    </tr>
-                <? } ?>
+                        <tr>
+                            <td><?= $author['name'] ?></td>
+                            <td class="functions">
+                                <a href="szerzo_form.php?author=<?= $author['id'] ?>"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
+                                <a href="#" class="delete_record" table="authors" record_id="<?= $author['id'] ?>"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
+                            </td>
+                        </tr>
+                    <? } ?>
                 </table>
             </div>
             <div class="col-6">
@@ -57,15 +58,16 @@
                         <th>Név</th>
                         <th>Funkciók</th>
                     </tr>
+
                     <? foreach ($categories->getCategories() as $key => $category) { ?>
-                    <tr>
-                        <td><?= $category['name'] ?></td>
-                        <td class="functions">
-                            <a href="kategoria_form.php"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
-                            <a href="#" class="delete_record" table="categories" record_id="<?= $category['id'] ?>"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
-                        </td>
-                    </tr>
-                <? } ?>
+                        <tr>
+                            <td><?= $category['name'] ?></td>
+                            <td class="functions">
+                                <a href="kategoria_form.php?category=<?= $category['id'] ?>"><img src="../img/edit.png" alt="módosítás" title="módosítás"></a>
+                                <a href="#" class="delete_record" table="categories" record_id="<?= $category['id'] ?>"><img src="../img/delete.png" alt="törlés" title="törlés"></a>
+                            </td>
+                        </tr>
+                    <? } ?>
                 </table>
             </div>
         </div>
