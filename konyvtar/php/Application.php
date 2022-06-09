@@ -85,5 +85,10 @@ class Application {
 		$result = $this->connection->query("DELETE FROM $table WHERE $table.id = $id;");
 		return $result;
 	}
+
+
+	protected function execute($sql) {
+		return $this->connection->query($sql);
+	}
 }
 ?>
